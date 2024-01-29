@@ -1,11 +1,12 @@
 public class Entry{
-    public string _prompt;
-    public string _date;
+    public string _entryPrompt;
+    public string _entryDate;
+    
+    public string _entryText;
 
-    public string _userEntry;
-
-    public string MergeEntry(){
-        string entry = $"{_date} {_prompt} {_userEntry}";
-        return entry;
+    public string CompileEntry(){
+        string _entry = $"Date: {_entryDate} Prompt: {_entryPrompt} Response: {_entryText}";
+        return _entry;
     }
+        
 }
