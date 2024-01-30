@@ -9,6 +9,7 @@ public class Journal{
     PromptGenerator promptGenerator = new PromptGenerator();
     
     public void DisplayMenu(){
+        Console.WriteLine("");
         Console.WriteLine("Please select one of the following options: ");
         Console.WriteLine("1: Write");
         Console.WriteLine("2: Display");
@@ -16,6 +17,7 @@ public class Journal{
         Console.WriteLine("4: Save");
         Console.WriteLine("5: Quit");
         _selector = int.Parse(Console.ReadLine());
+        Console.WriteLine();
         if (_selector == 1){
             WriteEntry();
         }
@@ -48,13 +50,26 @@ public class Journal{
         }
     }
     public void LoadJournal(){
-        
+        Console.WriteLine("What is the Journal's Filename? ");
+        _fileName = Console.ReadLine();
+        string[] lines = System.IO.File.ReadAllLines($"{_fileName}.csv");
+        foreach (string line in lines){
+            Entry loadEntry = new Entry();
+            string[] parts = line.Split("\",\"");
+            loadEntry._entryDate = parts[0].Trim('"');
+            loadEntry._entryPrompt = parts[1];
+            loadEntry._entryText = parts[2].TrimEnd('"');
+            _entries.Add(loadEntry);
+        }
+
     }
     public void SaveJournal(){
-        Console.WriteLine("");
+        Console.WriteLine("What do you want to make the Journal's Filename? ");
         string _fileName = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter(_fileName)){
-            
+        using (StreamWriter outputFile = new StreamWriter($"{_fileName}.csv")){
+            foreach (Entry entry in _entries){
+                outputFile.WriteLine($"\"{entry._entryDate}\",\"{entry._entryPrompt}\",\"{entry._entryText} \"");
+            }
         }
     }
 
