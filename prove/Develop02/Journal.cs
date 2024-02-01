@@ -18,27 +18,6 @@ public class Journal{
         Console.WriteLine("5: Quit");
         _selector = int.Parse(Console.ReadLine());
         Console.WriteLine();
-        switch (_selector)
-        {
-            case 1:
-                WriteEntry();
-                break;
-            case 2:
-                DisplayJournal();
-                break;
-            case 3:
-                LoadJournal();
-                break;
-            case 4:
-                SaveJournal();
-                break;
-            case 5:
-                Console.WriteLine("Journal Shutting down");
-                Console.WriteLine();
-                break;
-            default:
-                break;
-        }
     }
     public void WriteEntry(){
         Entry entry = new Entry();
