@@ -9,6 +9,7 @@ public class Journal{
     PromptGenerator promptGenerator = new PromptGenerator();
     
     public void DisplayMenu(){
+        // Dispay Menu options.
         Console.WriteLine("");
         Console.WriteLine("Please select one of the following options: ");
         Console.WriteLine("1: Write");
@@ -16,8 +17,10 @@ public class Journal{
         Console.WriteLine("3: Load");
         Console.WriteLine("4: Save");
         Console.WriteLine("5: Quit");
+        // Get user input for menu selection.
         _selector = int.Parse(Console.ReadLine());
         Console.WriteLine();
+           // Switch statement for menu options.
            switch (_selector)
             {
                 case 1:
@@ -32,6 +35,7 @@ public class Journal{
                 case 4:
                     SaveJournal();
                     break;
+                //
                 case 5:
                     Console.WriteLine("Journal Shutting down");
                     Console.WriteLine();
