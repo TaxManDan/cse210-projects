@@ -11,7 +11,7 @@ class Program
 
         // Display welcome message.
         Console.WriteLine("Welcome to the Journal Program!");
-        
+
         // Start the Journal menu Loop.
         while (myJournal._selector != 5)
         {
