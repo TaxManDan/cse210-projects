@@ -46,24 +46,34 @@ public class Journal{
         
     }
     public void WriteEntry(){
+        // Create new entry instance
         Entry entry = new Entry();
+
+        // Generate and display prompt
         promptGenerator._prompt = promptGenerator.GeneratePrompt();
         Console.WriteLine($"{promptGenerator._prompt}");
+        // Get current Date
         DateTime thecurrentTime = DateTime.Now;
+        // Get user input for entry
         entry._entryText = Console.ReadLine();
+
+        // Add entry to list of entries
         entry._entryPrompt = promptGenerator._prompt;
         entry._entryDate = thecurrentTime.ToShortDateString();
         _entries.Add(entry);
     }
     public void DisplayJournal(){
+        // Go through list of entries and display each entry
         foreach (Entry entry in _entries){
             Console.WriteLine(entry.CompileEntry());
         }
     }
     public void LoadJournal(){
+        // Prompt for filename and read file
         Console.WriteLine("What is the Journal's Filename? ");
         _fileName = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines($"{_fileName}.csv");
+        // For each line, split parts and create new entry and add to journal
         foreach (string line in lines){
             Entry loadEntry = new Entry();
             string[] parts = line.Split("\",\"");
@@ -75,9 +85,11 @@ public class Journal{
 
     }
     public void SaveJournal(){
+        // Prompt for filename
         Console.WriteLine("What do you want to make the Journal's Filename? ");
         string _fileName = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter($"{_fileName}.csv")){
+            // Go through list of entries and add formatting compatible with csv files and save to file
             foreach (Entry entry in _entries){
                 outputFile.WriteLine($"\"{entry._entryDate}\",\"{entry._entryPrompt}\",\"{entry._entryText} \"");
             }
