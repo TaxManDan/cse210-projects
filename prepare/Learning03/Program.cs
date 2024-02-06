@@ -12,7 +12,7 @@ class Program
         f5.SetTop(3);
         f5.SetBottom(4);
         int top = f5.GetTop();
-        int bottom =f5.GetBottom();
+        int bottom = f5.GetBottom();
         Console.WriteLine($"{top}");
         Console.WriteLine($"{bottom}");
 
