@@ -17,10 +17,10 @@ public class Reference{
     }
     public string DisplayReference(){
         if (_endVerse != 0){
-            return $"{_book} {_chapter} {_startVerse}-{_endVerse}";
+            return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
         }
         else{
-            return $"{_book} {_chapter} {_startVerse}";
+            return $"{_book} {_chapter}:{_startVerse}";
         } 
 
     }

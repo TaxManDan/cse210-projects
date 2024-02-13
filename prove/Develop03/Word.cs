@@ -5,7 +5,7 @@ public class Word{
          _word = word;
     }
     public string GetWord(){
-        return _word;
+        return " "+ _word;
     }
     public void HideWord(){
         string hiddenWord = "";
