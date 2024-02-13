@@ -20,6 +20,7 @@ public class Reference
     }
     public string DisplayReference()
     {
+        // Check if there is an end verse
         if (_endVerse != "0")
         {
             return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";

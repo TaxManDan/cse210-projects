@@ -13,6 +13,7 @@ public class Word
     public void HideWord()
     {
         string hiddenWord = "";
+        // Replace all characters with underscores
         for (int i = 0; i < _word.Length; i++)
         {
             hiddenWord += "_";
