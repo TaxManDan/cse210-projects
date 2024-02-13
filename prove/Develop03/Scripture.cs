@@ -91,4 +91,7 @@ public class Scripture
         }
         return _scriptureHidden;
     }
+    public string ShowReference(){
+        return _reference.DisplayReference();
+    }
 }
