@@ -76,7 +76,7 @@ public class Journal
     public void LoadJournal()
     {
         // Prompt for filename and read file
-        Console.WriteLine("What is the Journal's Filename? ");
+        Console.WriteLine("What is the Journal's Filename? (Enter filename without extension)");
         _fileName = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines($"{_fileName}.csv");
         // For each line, split parts and create new entry and add to journal
@@ -94,7 +94,7 @@ public class Journal
     public void SaveJournal()
     {
         // Prompt for filename
-        Console.WriteLine("What do you want to make the Journal's Filename? ");
+        Console.WriteLine("What do you want to make the Journal's Filename? (Enter filename without extension)");
         string _fileName = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter($"{_fileName}.csv"))
         {
