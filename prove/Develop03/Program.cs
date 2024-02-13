@@ -7,7 +7,7 @@ class Program
         Console.Clear();
          Random rand1   = new Random();
         string[] lines = System.IO.File.ReadAllLines($"scriptures.txt");
-        int randomScripture = rand1.Next(0, lines.Length);
+        int randomScripture = rand1.Next(1, lines.Length);
         string[] scriptureParts = lines[randomScripture].Split('|');
         string refer1 = scriptureParts[0].Trim();
         string text1 = scriptureParts[1].Trim();

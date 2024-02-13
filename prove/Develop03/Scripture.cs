@@ -23,19 +23,19 @@ public class Scripture
         string[] referenceSplit = reference.Split('+');
         string book = referenceSplit[0];
         string[] referenceInt = referenceSplit[1].Split(':');
-        int chapter = int.Parse(referenceInt[0]);
+        string chapter = referenceInt[0];
         char dash = '-';
         if (referenceInt[1].Contains(dash))
         {
             string[] verseInt = referenceInt[1].Split("-");
-            int startVerse = int.Parse(verseInt[0]);
-            int endVerse = int.Parse(verseInt[1]);
+            string startVerse = verseInt[0];
+            string endVerse = verseInt[1];
             Reference reference1 = new Reference(book, chapter, startVerse, endVerse);
             _reference = reference1;
         }
         else
         {
-            int startVerse = int.Parse(referenceInt[1]);
+            string startVerse = referenceInt[1];
             Reference reference1 = new Reference(book, chapter, startVerse);
             _reference = reference1;
         }
