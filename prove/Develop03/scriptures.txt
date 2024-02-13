@@ -1,4 +1,4 @@
-Scripture must be formatted as (Book)+(Chapter):(StartVerse)-(EndVerse) | (Scripture Text)
+Scriptures must be formatted as (Book)+(Chapter):(StartVerse)-(EndVerse) | (Scripture Text)  in order for program functionality
 John+3:16 | For God so loved the world that he gave his one and only Son, that whoever believes in him should not perish but have eternal life.
 1 Nephi+2:15 | And my father dwelt in a tent.
 Proverbs+3:5-6 | Trust in the Lord in all thine heart and lean not unto thine own understanding; in all thy ways acknowledg him, and he shall direct thy paths.

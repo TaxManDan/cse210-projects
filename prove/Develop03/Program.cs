@@ -6,13 +6,14 @@ class Program
     {
         Scripture scripture1;
         Console.Clear();
-         
-         // Load the scriptures from the file.
+
+        // Load the scriptures from the file.
         string[] lines = System.IO.File.ReadAllLines($"scriptures.txt");
 
         // Take all the Scriptures from the file and put them in a list of Scriptures
         List<Scripture> scriptures = new List<Scripture>();
-        for(int i = 1; i < lines.Length; i++){
+        for (int i = 1; i < lines.Length; i++)
+        {
 
             // Seperate the Scripture into reference and text
             string[] scriptureParts = lines[i].Split('|');
@@ -28,28 +29,30 @@ class Program
         string sel = Console.ReadLine();
 
         // Check if the user wants to select a scripture
-        if(sel == "y"){
+        if (sel == "y")
+        {
 
             // Display the available scriptures and ask the user to select one
             Console.WriteLine("Here are the available scriptures:");
-            for(int i=0; i < scriptures.Count; i++){
+            for (int i = 0; i < scriptures.Count; i++)
+            {
                 Console.WriteLine($"{i}. {scriptures[i].ShowReference()}");
             }
             Console.Write("Enter the number of the scripture you want to use: ");
             int num = int.Parse(Console.ReadLine());
             scripture1 = scriptures[num];
             Console.Clear();
-            }
-        else{
+        }
+        else
+        {
 
             // Randomly select a scripture if the user doesn't want to select one
-         Random rand1   = new Random();
+            Random rand1 = new Random();
             int randomScripture = rand1.Next(0, scriptures.Count);
             scripture1 = scriptures[randomScripture];
             Console.Clear();
-        }    
-        
-        
+        }
+
         // Loop until the user wants to quit
         bool quit = false;
         while (!quit)
@@ -81,10 +84,5 @@ class Program
                 }
             }
         }
-
-
-
-
-
     }
 }
