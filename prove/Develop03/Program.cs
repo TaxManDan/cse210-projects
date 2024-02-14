@@ -6,6 +6,8 @@ class Program
     {
         Scripture scripture1;
         Console.Clear();
+        bool shutdown = false;
+        
 
         // Load the scriptures from the file.
         string[] lines = System.IO.File.ReadAllLines($"scriptures.txt");
@@ -25,6 +27,9 @@ class Program
 
         // Display the welcome message and ask if the user wants to select a scripture
         Console.WriteLine("Welcome to the Scripture Memorizer!");
+
+        while (!shutdown){
+
         Console.Write("Do you want to select a scripture? (y/n) ");
         string sel = Console.ReadLine();
 
@@ -84,5 +89,16 @@ class Program
                 }
             }
         }
+        Console.Write("Would you like to mermorize another Scripture? (y/n) ");
+        string sel2 = Console.ReadLine();
+        if (sel2 == "y"){
+            shutdown = false;
+        }
+        else {
+            shutdown = true;
+        }
+        }
+        
+        
     }
 }

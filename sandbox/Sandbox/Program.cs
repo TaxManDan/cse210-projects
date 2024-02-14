@@ -4,16 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
-        string word = "Hello";
-        Console.WriteLine($"{HideWord(word)}");
-        Console.WriteLine(word);
-        string HideWord(string _word){
-        string hiddenWord = "";
-        for (int i = 0; i < _word.Length; i++){
-            hiddenWord += "_";
-        }
-        return hiddenWord;
+    Console.WriteLine("This is a test of the communication system");
+    bool _alarm = true;
+    while (_alarm)
+    {
+        Console.WriteLine("Alarm is on");
+        _alarm = false;
+    
     }
+
     }
 }
