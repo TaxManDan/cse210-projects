@@ -1,0 +1,2 @@
+# Scripture Memorization program Instructions
+
