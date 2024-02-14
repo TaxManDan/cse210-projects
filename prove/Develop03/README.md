@@ -1,4 +1,4 @@
-# Scripture Memorization program Instructions
+# Scripture Memorization Program Instructions
 
 This program allows users to read scriptures from a correctly formatted .txt file
 and allows them to select one or have one randomly selected to memorize by hiding
