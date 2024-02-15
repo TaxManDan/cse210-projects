@@ -1,7 +1,7 @@
 using System;
 
 // To exceed the requirements I have added the ability to read from the scriptures.txt file so the user can put as many scriptures
-// as they want so they can memorize multiple scriptures at once.
+// as they want so they can memorize multiple scriptures at once. Check  README.md for more details.
 
 class Program
 {
