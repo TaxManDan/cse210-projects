@@ -95,6 +95,7 @@ class Program
             shutdown = false;
         }
         else {
+            Console.WriteLine("Goodbye!");
             shutdown = true;
         }
         }
