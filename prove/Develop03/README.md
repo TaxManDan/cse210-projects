@@ -3,7 +3,8 @@
 This program allows users to read scriptures from a correctly formatted .txt file
 and allows them to select one or have one randomly selected to memorize by hiding
 words every time they hit enter until the whole scripture is hidden. At that point
-it will ask if they would like to memorize another scripture.
+it will ask if they would like to memorize another scripture. To quit user needs to 
+type "quit" while a scripture is open and then type "n" to not select another scripture.
 
 To achieve this functionality the program is split into 4 classes and a txt file:
 
