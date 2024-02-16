@@ -9,8 +9,8 @@ class Program
     {
         Scripture scripture1;
         Console.Clear();
-        bool shutdown = false;
-        
+        bool _shutdown = false;
+
 
         // Load the scriptures from the file.
         string[] lines = System.IO.File.ReadAllLines($"scriptures.txt");
@@ -31,78 +31,81 @@ class Program
         // Display the welcome message and ask if the user wants to select a scripture
         Console.WriteLine("Welcome to the Scripture Memorizer!");
 
-        while (!shutdown){
-
-        Console.Write("Do you want to select a scripture? (y/n) ");
-        string sel = Console.ReadLine();
-
-        // Check if the user wants to select a scripture
-        if (sel == "y")
+        while (!_shutdown)
         {
 
-            // Display the available scriptures and ask the user to select one
-            Console.WriteLine("Here are the available scriptures:");
-            for (int i = 0; i < scriptures.Count; i++)
+            Console.Write("Do you want to select a scripture? (y/n) ");
+            string sel = Console.ReadLine();
+
+            // Check if the user wants to select a scripture
+            if (sel == "y")
             {
-                Console.WriteLine($"{i}. {scriptures[i].ShowReference()}");
-            }
-            Console.Write("Enter the number of the scripture you want to use: ");
-            int num = int.Parse(Console.ReadLine());
-            scripture1 = scriptures[num];
-            Console.Clear();
-        }
-        else
-        {
 
-            // Randomly select a scripture if the user doesn't want to select one
-            Random rand1 = new Random();
-            int randomScripture = rand1.Next(0, scriptures.Count);
-            scripture1 = scriptures[randomScripture];
-            Console.Clear();
-        }
-
-        // Loop until the user wants to quit
-        bool quit = false;
-        while (!quit)
-        {
-            //Display the current Scripture state
-            Console.WriteLine(scripture1.DisplayScripture());
-            string input = Console.ReadLine();
-            Console.Clear();
-
-            // Check if the user wants to quit
-            if (input == "quit")
-            {
-                quit = true;
+                // Display the available scriptures and ask the user to select one
+                Console.WriteLine("Here are the available scriptures:");
+                for (int i = 0; i < scriptures.Count; i++)
+                {
+                    Console.WriteLine($"{i}. {scriptures[i].ShowReference()}");
+                }
+                Console.Write("Enter the number of the scripture you want to use: ");
+                int num = int.Parse(Console.ReadLine());
+                scripture1 = scriptures[num];
+                Console.Clear();
             }
             else
             {
 
-                // Check if the scripture is hidden
-                quit = scripture1.CheckHidden();
-                if (!quit)
-                {
+                // Randomly select a scripture if the user doesn't want to select one
+                Random rand1 = new Random();
+                int randomScripture = rand1.Next(0, scriptures.Count);
+                scripture1 = scriptures[randomScripture];
+                Console.Clear();
+            }
 
-                    // Hide words in the scripture
-                    scripture1.HideScripture();
+            // Loop until the user wants to quit
+            bool _quit = false;
+            while (!_quit)
+            {
+                //Display the current Scripture state
+                Console.WriteLine(scripture1.DisplayScripture());
+                string input = Console.ReadLine();
+                Console.Clear();
+
+                // Check if the user wants to quit
+                if (input == "quit")
+                {
+                    _quit = true;
                 }
                 else
                 {
-                    Console.WriteLine("The scripture is hidden.");
+
+                    // Check if the scripture is hidden
+                    _quit = scripture1.CheckHidden();
+                    if (!_quit)
+                    {
+
+                        // Hide words in the scripture
+                        scripture1.HideScripture();
+                    }
+                    else
+                    {
+                        Console.WriteLine("The scripture is hidden.");
+                    }
                 }
             }
+            Console.Write("Would you like to mermorize another Scripture? (y/n) ");
+            string sel2 = Console.ReadLine();
+            if (sel2 == "y")
+            {
+                _shutdown = false;
+            }
+            else
+            {
+                Console.WriteLine("Goodbye!");
+                _shutdown = true;
+            }
         }
-        Console.Write("Would you like to mermorize another Scripture? (y/n) ");
-        string sel2 = Console.ReadLine();
-        if (sel2 == "y"){
-            shutdown = false;
-        }
-        else {
-            Console.WriteLine("Goodbye!");
-            shutdown = true;
-        }
-        }
-        
-        
+
+
     }
 }

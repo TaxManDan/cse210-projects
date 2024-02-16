@@ -27,7 +27,7 @@ public class Scripture
         string book = referenceSplit[0];
         string[] referenceInt = referenceSplit[1].Split(':');
         string chapter = referenceInt[0];
-        
+
         // Check if the end verse is included
         char dash = '-';
         if (referenceInt[1].Contains(dash))
@@ -91,7 +91,8 @@ public class Scripture
         }
         return _scriptureHidden;
     }
-    public string ShowReference(){
+    public string ShowReference()
+    {
         return _reference.DisplayReference();
     }
 }
