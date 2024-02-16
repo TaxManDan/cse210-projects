@@ -15,6 +15,14 @@ class Program
         // Load the scriptures from the file.
         string[] lines = System.IO.File.ReadAllLines($"scriptures.txt");
 
+        
+
+        // Display the welcome message and ask if the user wants to select a scripture
+        Console.WriteLine("Welcome to the Scripture Memorizer!");
+
+        while (!_shutdown)
+        {
+
         // Take all the Scriptures from the file and put them in a list of Scriptures
         List<Scripture> scriptures = new List<Scripture>();
         for (int i = 1; i < lines.Length; i++)
@@ -27,13 +35,6 @@ class Program
             Scripture scripture = new Scripture(text, refer);
             scriptures.Add(scripture);
         }
-
-        // Display the welcome message and ask if the user wants to select a scripture
-        Console.WriteLine("Welcome to the Scripture Memorizer!");
-
-        while (!_shutdown)
-        {
-
             Console.Write("Do you want to select a scripture? (y/n) ");
             string sel = Console.ReadLine();
 
