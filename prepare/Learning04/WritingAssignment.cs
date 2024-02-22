@@ -9,6 +9,6 @@ public class WritingAssignment : Assignment
 
     public string GetWritingInformation(){
         string studentInfo = base.GetSummary();
-        return studentInfo + "\n" + _title + "by " + base.GetStudentName();
+        return studentInfo + "\n" + _title + " by " + base.GetStudentName();
     }
 }
