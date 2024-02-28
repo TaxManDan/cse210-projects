@@ -32,25 +32,26 @@ public class ReflectingActivity : Activity{
         Console.Clear();
         Console.WriteLine("Get Ready...");
         base.DisplaySpinner(5);
-        Console.WriteLine("Consider the following prompt:");
         GetPrompt();
-        Console.WriteLine($" ---{_prompt}---");
-        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
+        Console.WriteLine( 
+            "Consider the following prompt:\n"+
+            $"\n ---{_prompt}---\n"+
+            "\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
         Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
         Console.Write("\nYou may begin in: ");
-        base.DisplayCountdown(5);
+        base.DisplayCountdown(3);
         Console.Clear();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(base.GetDuration());
         while (startTime < futureTime){
             GetQuestion();
             Console.Write($"\n> {_question} ");
-            base.DisplaySpinner(10);
+            base.DisplaySpinner(5);
             startTime = DateTime.Now;
         }
         Console.WriteLine("\nWell Done!!!");
-        base.DisplaySpinner(5);
+        base.DisplaySpinner(3);
     }
     public void GetPrompt(){
         if (_promptIndex.Count ==0){
@@ -73,5 +74,5 @@ public class ReflectingActivity : Activity{
         _question = _questions[_questionIndex[questionSelector]];
         _questionIndex.Remove(_questionIndex[questionSelector]);
     }
-
+   
 }

@@ -28,7 +28,7 @@ class Program
         Console.Write("\b \b");
         Console.Write("\\");
         Thread.Sleep(200);
-        Console.Write("\b \b");    
+        Console.Write("\b ");    
         }
     }
     }

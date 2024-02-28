@@ -7,7 +7,7 @@ public class BreathingActivity : Activity
     public void StartBreathing(){
         Console.Clear();
         Console.WriteLine("Get ready...");
-        base.DisplaySpinner(5);
+        base.DisplaySpinner(3);
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(base.GetDuration());
         
@@ -19,7 +19,7 @@ public class BreathingActivity : Activity
             startTime = DateTime.Now;
         }
         Console.WriteLine("\nWell Done!!!");
-        base.DisplaySpinner(5);
+        base.DisplaySpinner(3);
         
     }
    
