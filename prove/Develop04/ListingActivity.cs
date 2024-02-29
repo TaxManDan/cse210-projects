@@ -36,7 +36,7 @@ public class ListingActivity : Activity
         }
         Console.WriteLine($"\nYou listed {_count} items!");
 
-        Console.WriteLine("\nWell Done!!");
+        Console.WriteLine("\n\nWell Done!!!");
         base.DisplaySpinner(3);
     }
 

@@ -50,7 +50,7 @@ public class ReflectingActivity : Activity{
             base.DisplaySpinner(5);
             startTime = DateTime.Now;
         }
-        Console.WriteLine("\nWell Done!!!");
+        Console.WriteLine("\n\nWell Done!!!");
         base.DisplaySpinner(3);
     }
     public void GetPrompt(){

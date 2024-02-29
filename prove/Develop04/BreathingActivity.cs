@@ -18,7 +18,7 @@ public class BreathingActivity : Activity
             base.DisplayCountdown(6);
             startTime = DateTime.Now;
         }
-        Console.WriteLine("\nWell Done!!!");
+        Console.WriteLine("\n\nWell Done!!!");
         base.DisplaySpinner(3);
         
     }
