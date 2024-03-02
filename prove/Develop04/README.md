@@ -1,4 +1,4 @@
-# Mindfullness Program Instructions
+# Mindfulness Program Instructions
 
 This program allows users to choose 1 of 3 mindfullness activity to participate in
 to help them be more mindful and unwind from the fast-paced world. The opportunities
