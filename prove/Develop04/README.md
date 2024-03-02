@@ -6,7 +6,8 @@ given to the users are a breathing activity, a reflecting activing and a listing
 After the user chosen an activity it will display the activity's name and descripition and
 will prompt the user for a duration and then will run the activity for the duration. After
 the activity it will display the duration of the activity they completed and it will store
-it in the log with the current date and time. They can view the log from the main menu. 
+it in the log with the current date and time. They can view the log from the main menu. If
+you want to reset the log you have to manually delete all the lines in the log.csv file. 
 
 To achieve this functionality the program is split into 5 classes and a csv file:
 
