@@ -1,7 +1,7 @@
 using System;
 
 // To exceed the requirements I have added a log that saves and loads from a csv file. 
-// I have also made it so all the prompts and questionshave to be chosen at least once until it repeats in the session.
+// I have also made it so all the prompts and questions have to be chosen at least once until it repeats in the session.
 
 class Program
 {
