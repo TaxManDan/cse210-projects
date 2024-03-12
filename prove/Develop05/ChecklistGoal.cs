@@ -16,10 +16,12 @@ public class ChecklistGoal: Goal{
         }
         _count += 1;
         if (_count == _bonusCount){
-            _points += _bonusPoints;
-            _isCompleted = true;
+             _isCompleted = true;
+            return _points + _bonusPoints;
         }
+        else{
         return _points;
+        }
     }
     public override bool IsComplete()
     {
@@ -27,7 +29,13 @@ public class ChecklistGoal: Goal{
     }
     public override void DisplayGoalList()
     {
+        if(!_isCompleted){
+            
         Console.WriteLine($"[ ] {_goalName} ({_goalDescription}) -- Currently completed:{_count}/{_bonusCount}");
+        }
+        else{
+        Console.WriteLine($"[X] {_goalName} ({_goalDescription}) -- Currently completed:{_count}/{_bonusCount}");
+        }
     }
     public override string PrepareSave()
     {

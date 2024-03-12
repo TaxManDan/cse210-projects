@@ -9,7 +9,7 @@ class Program
         var file = new File();
         int selection = 0;
         int score = 0;
-        while (selection != 6){
+        while (selection != 7){
             Console.Write(
                 "\nYou have " + score + " points.\n"+
                 "\nMenu Options:"+
@@ -18,7 +18,8 @@ class Program
                 "\n3. Save Goals"+
                 "\n4. Load Goals"+
                 "\n5. Record Event"+
-                "\n6. Quit"+
+                "\n6. Visit Point Shop" +
+                "\n7. Quit"+
                 "\nSelect a choice from the menu: ");
             selection = int.Parse(Console.ReadLine());
             switch (selection){
@@ -82,12 +83,16 @@ class Program
                 int goalIndex = 1;
                 foreach (Goal goal in goals){
                     Console.WriteLine( goalIndex + ". " +goal.DisplayGoalName());
+                    goalIndex++;
                 }
                 Console.Write("Which goal did you accomplish? ");
                 int goalSelector = int.Parse(Console.ReadLine());
                 score += goals[goalSelector-1].RecordEvent();
 
+                break;
 
+            case 6:
+                
                 break;
             default:
                 break;

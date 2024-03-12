@@ -1,2 +1,3 @@
-10
+3510
 SimpleGoal:Test,test goal 1,10,True
+ChecklistGoal:test check,checklist test,50,1000,5,5
