@@ -6,6 +6,7 @@ class Program
     {
         Console.Clear();
         List<Goal> goals = new List<Goal>();
+        var pointShop = new PointShop();
         var file = new File();
         int selection = 0;
         int score = 0;
@@ -92,7 +93,8 @@ class Program
                 break;
 
             case 6:
-                
+                pointShop.SetScore(score);
+                pointShop.DisplayShopMenu();
                 break;
             default:
                 break;
