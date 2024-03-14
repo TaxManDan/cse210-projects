@@ -17,8 +17,8 @@ class Program
                 "\nMenu Options:"+
                 "\n1. Create New Goal"+
                 "\n2. List Goals"+
-                "\n3. Save Goals"+
-                "\n4. Load Goals"+
+                "\n3. Save Data"+
+                "\n4. Load Data"+
                 "\n5. Record Event"+
                 "\n6. Visit Reward Shop" +
                 "\n7. Quit"+
@@ -73,10 +73,10 @@ class Program
                 break;
             case 3:
                 file.SetScore(score);
-                file.SaveGoals(goals, pointShop.GetItems());
+                file.SaveData(goals, pointShop.GetItems());
                 break;
             case 4:
-                file.LoadGoals();
+                file.LoadData();
                 goals = file.GetGoals();
                 pointShop.SetItems(file.GetItems());
                 score = file.GetScore();

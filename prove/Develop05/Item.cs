@@ -51,4 +51,7 @@ public class Item{
     public void UseItem(){
         _quantityOwned -= 1;
     }
+    public int GetShopQuantity(){
+        return _shopQuantity;
+    }
 }

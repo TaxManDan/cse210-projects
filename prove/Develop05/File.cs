@@ -12,7 +12,7 @@ public class File
         _score = score;
     }
 
-    public void LoadGoals()
+    public void LoadData()
     {
         Console.Write("What is the filename? (excluding file extension): ");
         string fileName = Console.ReadLine();
@@ -65,7 +65,7 @@ public class File
             
         }
     }
-    public void SaveGoals(List<Goal> goals, List<Item> items)
+    public void SaveData(List<Goal> goals, List<Item> items)
     {
         Console.Write("What is the filename? (excluding file extension): ");
         string fileName = Console.ReadLine();
