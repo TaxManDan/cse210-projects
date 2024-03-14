@@ -4,7 +4,7 @@ public class ChecklistGoal: Goal{
     private int _bonusPoints;
     private int _bonusCount;
     
-    public ChecklistGoal( string name, string description, int point, int bonusPoints,int bonusCount, int count): base( "ChecklistGoal",name, description, point, false){
+    public ChecklistGoal( string name, string description, int point, int bonusPoints,int bonusCount, int count,bool complete): base( "ChecklistGoal",name, description, point, complete){
         _bonusCount = bonusCount;
         _bonusPoints = bonusPoints;
         _count = count;
@@ -39,6 +39,6 @@ public class ChecklistGoal: Goal{
     }
     public override string PrepareSave()
     {
-        return $"{base.PrepareSave()},{_bonusPoints},{_bonusCount},{_count}";
+        return $"{base.PrepareSave()},{_bonusPoints},{_bonusCount},{_count},{_isCompleted}";
     }
 }

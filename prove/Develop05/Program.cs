@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -19,7 +20,7 @@ class Program
                 "\n3. Save Goals"+
                 "\n4. Load Goals"+
                 "\n5. Record Event"+
-                "\n6. Visit Point Shop" +
+                "\n6. Visit Reward Shop" +
                 "\n7. Quit"+
                 "\nSelect a choice from the menu: ");
             selection = int.Parse(Console.ReadLine());
@@ -61,7 +62,7 @@ class Program
                     int bonusCount = int.Parse(Console.ReadLine());
                     Console.Write("What is the bonus for accomplishing it that many times? ");
                     int bonusPoints = int.Parse(Console.ReadLine());
-                    goals.Add(new ChecklistGoal(goalName,goalDescription,points,bonusPoints,bonusCount,0));
+                    goals.Add(new ChecklistGoal(goalName,goalDescription,points,bonusPoints,bonusCount,0,false));
                 }
                 break;
             case 2:
@@ -72,10 +73,12 @@ class Program
                 break;
             case 3:
                 file.SetScore(score);
-                file.SaveGoals(goals);
+                file.SaveGoals(goals, pointShop.GetItems());
                 break;
             case 4:
-                goals = file.LoadGoals();
+                file.LoadGoals();
+                goals = file.GetGoals();
+                pointShop.SetItems(file.GetItems());
                 score = file.GetScore();
                 break;
 

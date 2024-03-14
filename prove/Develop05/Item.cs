@@ -3,6 +3,7 @@ public class Item{
     private string _name;
     private int _quantityOwned;
     private int _shopQuantity;
+    
 
     public string DisplayItem(){
         return $"{_name} {_shopQuantity} {_pointValue}";
@@ -13,6 +14,12 @@ public class Item{
         _name = name;
         _quantityOwned = 0;
         _shopQuantity = quantity;
+    }
+    public Item(string name, int cost, int shopQuantity, int inventory){
+        _name = name;
+        _pointValue = cost;
+        _shopQuantity = shopQuantity;
+        _quantityOwned = inventory;
     }
     public int GetCost(){
         return _pointValue;
@@ -37,5 +44,11 @@ public class Item{
     }
     public string GetName(){
         return _name;
+    }
+    public string PrepareSave(){
+        return "Item"+":" +_name + "," + _pointValue+ "," + _quantityOwned + "," + _shopQuantity;
+    }
+    public void UseItem(){
+        _quantityOwned -= 1;
     }
 }
