@@ -7,11 +7,15 @@ public class File
     private List<Item> _items = new List<Item>();
     private List<Goal> _goals = new List<Goal>();
 
+    // Sets Score
     public void SetScore(int score)
     {
         _score = score;
     }
 
+
+    // Loads from the file and sets the score as the first line of the file then checks if the rest of lines
+    // are goals or items and adds them to the correct list.
     public void LoadData()
     {
         Console.Write("What is the filename? (excluding file extension): ");
@@ -23,6 +27,11 @@ public class File
             string[] parts = lines[i].Split(":");
             string goalType = parts[0];
             Goal goal = null;
+
+            // Checks if goal is simple, eternal or checklist
+
+
+            // Creates the Simple Goal and adds it to the list
             if (goalType == "SimpleGoal")
             {
                 string goalName = parts[1].Split(",")[0];
@@ -32,6 +41,8 @@ public class File
                 goal = new SimpleGoal(goalName, goalDescription, points, isCompleted);
                 _goals.Add(goal);
             }
+
+            // Creates the Eternal Goal and adds it to the list
             else if (goalType == "EternalGoal")
             {
                 string goalName = parts[1].Split(",")[0];
@@ -40,6 +51,8 @@ public class File
                 goal = new EternalGoal(goalName, goalDescription, points);
                 _goals.Add(goal);
             }
+
+            // Creates the checklist Goal and adds it to the list
             else if (goalType == "ChecklistGoal")
             {
                 string goalName = parts[1].Split(",")[0];
@@ -49,9 +62,11 @@ public class File
                 int bonusCount = int.Parse(parts[1].Split(",")[4]);
                 int count = int.Parse(parts[1].Split(",")[5]);
                 bool complete = bool.Parse(parts[1].Split(",")[6]);
-                goal = new ChecklistGoal(goalName, goalDescription, points, bonusPoints, bonusCount, count,complete);
+                goal = new ChecklistGoal(goalName, goalDescription, points, bonusPoints, bonusCount, count, complete);
                 _goals.Add(goal);
             }
+
+            // Creates the Item and adds it to the item list
             else if (goalType == "Item")
             {
                 string[] itemParts = parts[1].Split(",");
@@ -62,9 +77,11 @@ public class File
                 Item item = new Item(itemName, itemCost, shopQuantity, itemQuantity);
                 _items.Add(item);
             }
-            
+
         }
     }
+
+    // Saves the Data with the First line being the score and the next lines being the goals then the items
     public void SaveData(List<Goal> goals, List<Item> items)
     {
         Console.Write("What is the filename? (excluding file extension): ");
@@ -76,21 +93,27 @@ public class File
             {
                 outputFile.WriteLine(goal.PrepareSave());
             }
-            foreach (Item item in items){
+            foreach (Item item in items)
+            {
                 outputFile.WriteLine(item.PrepareSave());
             }
 
         }
     }
+
+
+    //Getters
     public int GetScore()
     {
         return _score;
     }
-    public List<Goal> GetGoals(){
+    public List<Goal> GetGoals()
+    {
         return _goals;
     }
 
-    public List<Item> GetItems(){
+    public List<Item> GetItems()
+    {
         return _items;
     }
 }
