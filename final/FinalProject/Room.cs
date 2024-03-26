@@ -19,7 +19,7 @@ public class Room
     }
     public void DisplayItems(){
         foreach (Item item in _items){
-            item.DisplayItem();
+            Console.WriteLine(item.DisplayItem());
         }
     }
     public virtual string PrepareSave(){
@@ -38,5 +38,30 @@ public class Room
         }
 
         return total;
+    }
+    public void AddItem(){
+        Console.WriteLine("What is the type of the item? \n1.Electronic \n2.Furniture \n3.Misc)");
+        int type =int.Parse(Console.ReadLine());
+        if (type == 1){
+            Console.Write("What is the name of the item? ");
+            string name = Console.ReadLine();
+            Console.Write("What is the description of the item? ");
+            string description = Console.ReadLine();
+            Console.Write("What is the color of the item? ");
+            string color = Console.ReadLine();
+            Console.Write("What is the value of the item? ");
+            int value = int.Parse(Console.ReadLine());
+            Console.Write("What is the brand of the item? ");
+            string brand = Console.ReadLine();
+            Console.Write("What is the model of the item? ");
+            string model = Console.ReadLine();
+            Console.Write("What is the serial number of the item? ");
+            string serial = Console.ReadLine();
+            _items.Add(new ElectronicItem(brand, model, serial, name, description, color, value));
+        }
+        else if (type == 2){
+
+        }
+        
     }
 }

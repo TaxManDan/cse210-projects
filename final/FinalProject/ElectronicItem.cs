@@ -16,7 +16,7 @@ public class ElectronicItem : Item
     }
 
     public override string DisplayItem(){
-        return base.DisplayItem();
+        return base.DisplayItem() + " Brand: " + _brand + " Model: " + _model + " Serial Number: " + _serialNumber;
     }
 
 }
