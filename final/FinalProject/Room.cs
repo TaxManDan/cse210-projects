@@ -60,7 +60,31 @@ public class Room
             _items.Add(new ElectronicItem(brand, model, serial, name, description, color, value));
         }
         else if (type == 2){
-
+            Console.Write("What is the name of the item? ");
+            string name = Console.ReadLine();
+            Console.Write("What is the description of the item? ");
+            string description = Console.ReadLine();
+            Console.Write("What is the color of the item? ");
+            string color = Console.ReadLine();
+            Console.Write("What is the value of the item? ");
+            int value = int.Parse(Console.ReadLine());
+            Console.Write("What is the material of the item? ");
+            string material = Console.ReadLine();
+            _items.Add(new FurnitureItem(name, description, color, value, material));
+        }
+        else if (type == 3){
+            Console.Write("What is the name of the item? ");
+            string name = Console.ReadLine();
+            Console.Write("What is the description of the item? ");
+            string description = Console.ReadLine();
+            Console.Write("What is the color of the item? ");
+            string color = Console.ReadLine();
+            Console.Write("What is the value of the item? ");
+            int value = int.Parse(Console.ReadLine());
+            _items.Add(new Item(name,"Misc",color, description, value));
+        }
+        else{
+            Console.WriteLine("Invalid input");
         }
         
     }

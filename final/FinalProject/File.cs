@@ -7,7 +7,7 @@ public class File{
     public void SaveRooms(){
         Console.Write("What is the filename? (excluding file extension): ");
         string fileName = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter($"{fileName}.txt"))
+        using (StreamWriter outputFile = new StreamWriter($"{fileName}.csv"))
         {
             foreach (Room room in Rooms){
                 outputFile.WriteLine(room.PrepareSave());
@@ -16,6 +16,17 @@ public class File{
                 foreach (Item item in items){
                     outputFile.WriteLine(item.PrepareSave());
                 }
+            }
+        }
+    }
+    public void LoadRooms(){
+        Console.Write("What is the filename? (excluding file extension): ");
+        string fileName = Console.ReadLine();
+        string[] lines = System.IO.File.ReadAllLines($"{fileName}.csv");
+        foreach (string line in lines){
+            string[] parts = line.Split("\",\"");
+            if (parts[0] == "Bathroom"){
+                
             }
         }
     }
