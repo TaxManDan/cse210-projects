@@ -17,7 +17,7 @@ public class Item{
         return $"Type: {_type} Name: {_name} Description: {_description} Color: {_color} Value: ${_price}";
     }
     public virtual string PrepareSave(){
-        return $"\"{_type}\",\"{_name}\",\"{_color}\",\"{_description}\",\"{_price}\"";
+        return $"\"{_type}\",\"{_name}\",\"{_description}\",\"{_color}\",\"{_price}\"";
     } 
     public int GetPrice(){
         return _price;

@@ -6,11 +6,12 @@ class Program
     static void Main(string[] args)
     {
         List<Room> rooms = new List<Room>();
+        File file = new File();
         int sel = 0;
         string roomName = null;
+        Console.Clear();
         int sinks ;
         while (sel !=9){
-            Console.Clear();
             Console.Write("House Inventory Options: "+
             "\n1. Add Room"+
             "\n2. Add Item"+
@@ -99,8 +100,12 @@ class Program
                     rooms[roomNum-1].DisplayItems();
                     break;
                 case 5:
+                    file.Rooms = rooms;
+                    file.SaveRooms();   
                     break;
                 case 6:
+                    file.LoadRooms();
+                    rooms = file.Rooms;
                     break;
                 case 7:
                     int valueIndex = 1;
@@ -111,14 +116,14 @@ class Program
                     }
                     Console.Write("Enter room number: ");
                     int valueSel = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Total Value: "+rooms[valueSel-1].CaculateTotal());
+                    Console.WriteLine("Total Value: $"+rooms[valueSel-1].CaculateTotal());
                     break;
                 case 8:
                     int houseTotal = 0;
                     foreach (Room room in rooms){
                        houseTotal += room.CaculateTotal();
                     }
-                    Console.WriteLine("Total House Item Value: "+houseTotal);
+                    Console.WriteLine("Total House Item Value: $"+houseTotal);
                     break;
                 case 9:
                     Console.WriteLine("Goodbye!");

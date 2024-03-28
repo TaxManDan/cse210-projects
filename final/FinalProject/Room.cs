@@ -23,13 +23,16 @@ public class Room
         }
     }
     public virtual string PrepareSave(){
-        return $"{_name},{_type}";
+        return $"\"{_type}\",\"{_name}\"";
     }
     public virtual void DisplayRoom(){
         Console.WriteLine($"{_name} is {_type}");
     }
     public List<Item> GetItems(){
         return _items;
+    }
+    public string GetName(){
+        return _name;
     }
     public int CaculateTotal(){
         int total = 0;
@@ -40,7 +43,7 @@ public class Room
         return total;
     }
     public void AddItem(){
-        Console.WriteLine("What is the type of the item? \n1.Electronic \n2.Furniture \n3.Misc)");
+        Console.WriteLine("What is the type of the item? \n1.Electronic \n2.Furniture \n3.Misc");
         int type =int.Parse(Console.ReadLine());
         if (type == 1){
             Console.Write("What is the name of the item? ");
@@ -87,6 +90,9 @@ public class Room
             Console.WriteLine("Invalid input");
         }
         
+    }
+    public void ImportItem(Item item){
+        _items.Add(item);
     }
     public string ListRooms(){
         return $"{_type}: {_name}";
