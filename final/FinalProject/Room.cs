@@ -88,4 +88,7 @@ public class Room
         }
         
     }
+    public string ListRooms(){
+        return $"{_type}: {_name}";
+    }
 }
